@@ -1,0 +1,223 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* BeamCube custom color palette - Bright Theme */
+:root {
+  /* Changed to bright white background with dark text */
+  --background: 0.99 0 0; /* Bright white */
+  --foreground: 0.15 0 0; /* Dark text */
+  --card: 0.97 0 0; /* Light gray card */
+  --card-foreground: 0.15 0 0;
+  --popover: 0.99 0 0;
+  --popover-foreground: 0.15 0 0;
+  --primary: 0.78 0.15 195; /* Aqua blue - keeping brand color */
+  --primary-foreground: 0.99 0 0; /* White text on primary */
+  --secondary: 0.48 0.24 302; /* Violet - keeping brand color */
+  --secondary-foreground: 0.99 0 0;
+  --muted: 0.94 0 0; /* Light muted */
+  --muted-foreground: 0.45 0 0; /* Medium gray text */
+  --accent: 0.65 0.22 12; /* Coral red - keeping brand color */
+  --accent-foreground: 0.99 0 0;
+  --destructive: 0.65 0.22 12;
+  --destructive-foreground: 0.99 0 0;
+  --border: 0.88 0 0; /* Light border */
+  --input: 0.94 0 0;
+  --ring: 0.78 0.15 195;
+  --chart-1: 0.78 0.15 195;
+  --chart-2: 0.48 0.24 302;
+  --chart-3: 0.65 0.22 12;
+  --chart-4: 0.6 0.118 184.704;
+  --chart-5: 0.769 0.188 70.08;
+  --radius: 0.625rem;
+  --sidebar: 0.99 0 0;
+  --sidebar-foreground: 0.15 0 0;
+  --sidebar-primary: 0.78 0.15 195;
+  --sidebar-primary-foreground: 0.99 0 0;
+  --sidebar-accent: 0.94 0 0;
+  --sidebar-accent-foreground: 0.15 0 0;
+  --sidebar-border: 0.88 0 0;
+  --sidebar-ring: 0.78 0.15 195;
+}
+
+.dark {
+  --background: 0.06 0.02 265;
+  --foreground: 0.96 0 0;
+  --card: 0.11 0.02 265;
+  --card-foreground: 0.96 0 0;
+  --popover: 0.11 0.02 265;
+  --popover-foreground: 0.96 0 0;
+  --primary: 0.78 0.15 195;
+  --primary-foreground: 0.06 0.02 265;
+  --secondary: 0.48 0.24 302;
+  --secondary-foreground: 0.96 0 0;
+  --muted: 0.17 0.02 265;
+  --muted-foreground: 0.65 0 0;
+  --accent: 0.65 0.22 12;
+  --accent-foreground: 0.96 0 0;
+  --destructive: 0.65 0.22 12;
+  --destructive-foreground: 0.96 0 0;
+  --border: 0.17 0.02 265;
+  --input: 0.17 0.02 265;
+  --ring: 0.78 0.15 195;
+  --chart-1: 0.78 0.15 195;
+  --chart-2: 0.48 0.24 302;
+  --chart-3: 0.65 0.22 12;
+  --chart-4: 0.627 0.265 303.9;
+  --chart-5: 0.645 0.246 16.439;
+  --sidebar: 0.11 0.02 265;
+  --sidebar-foreground: 0.96 0 0;
+  --sidebar-primary: 0.78 0.15 195;
+  --sidebar-primary-foreground: 0.06 0.02 265;
+  --sidebar-accent: 0.17 0.02 265;
+  --sidebar-accent-foreground: 0.96 0 0;
+  --sidebar-border: 0.17 0.02 265;
+  --sidebar-ring: 0.78 0.15 195;
+}
+
+@theme inline {
+  --font-sans: "Poppins", "Inter", "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: oklch(var(--background));
+  --color-foreground: oklch(var(--foreground));
+  --color-card: oklch(var(--card));
+  --color-card-foreground: oklch(var(--card-foreground));
+  --color-popover: oklch(var(--popover));
+  --color-popover-foreground: oklch(var(--popover-foreground));
+  --color-primary: oklch(var(--primary));
+  --color-primary-foreground: oklch(var(--primary-foreground));
+  --color-secondary: oklch(var(--secondary));
+  --color-secondary-foreground: oklch(var(--secondary-foreground));
+  --color-muted: oklch(var(--muted));
+  --color-muted-foreground: oklch(var(--muted-foreground));
+  --color-accent: oklch(var(--accent));
+  --color-accent-foreground: oklch(var(--accent-foreground));
+  --color-destructive: oklch(var(--destructive));
+  --color-destructive-foreground: oklch(var(--destructive-foreground));
+  --color-border: oklch(var(--border));
+  --color-input: oklch(var(--input));
+  --color-ring: oklch(var(--ring));
+  --color-chart-1: oklch(var(--chart-1));
+  --color-chart-2: oklch(var(--chart-2));
+  --color-chart-3: oklch(var(--chart-3));
+  --color-chart-4: oklch(var(--chart-4));
+  --color-chart-5: oklch(var(--chart-5));
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: oklch(var(--sidebar));
+  --color-sidebar-foreground: oklch(var(--sidebar-foreground));
+  --color-sidebar-primary: oklch(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: oklch(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: oklch(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: oklch(var(--sidebar-accent-foreground));
+  --color-sidebar-border: oklch(var(--sidebar-border));
+  --color-sidebar-ring: oklch(var(--sidebar-ring));
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Orbitron font for headings */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Orbitron", "Geist", sans-serif;
+    font-weight: 700;
+  }
+}
+
+/* Custom animations and effects */
+@keyframes beam-move {
+  0%,
+  100% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 229, 255, 0.6);
+  }
+}
+
+@keyframes cube-rotate {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+.beam-animation {
+  animation: beam-move 8s linear infinite;
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #00e5ff 0%, #ff5f6d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-border {
+  position: relative;
+  background: linear-gradient(135deg, #00e5ff 0%, #ff5f6d 100%);
+  padding: 2px;
+  border-radius: var(--radius-lg);
+}
+
+.gradient-border-inner {
+  background: var(--color-card);
+  border-radius: calc(var(--radius-lg) - 2px);
+}
+
+/* Cursor spotlight effect */
+.cursor-spotlight {
+  pointer-events: none;
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.15) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
